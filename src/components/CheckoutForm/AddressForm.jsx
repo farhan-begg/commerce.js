@@ -14,22 +14,21 @@ const AddressForm = ({ checkoutToken, test }) => {
   const [shippingOptions, setShippingOptions] = useState([]);
   const [shippingOption, setShippingOption] = useState('');
   const methods = useForm();
- 
-  // fetches countries
+
   const fetchShippingCountries = async (checkoutTokenId) => {
     const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId);
 
     setShippingCountries(countries);
     setShippingCountry(Object.keys(countries)[0]);
   };
-  // fetches subdivisions of countries
+
   const fetchSubdivisions = async (countryCode) => {
     const { subdivisions } = await commerce.services.localeListSubdivisions(countryCode);
 
     setShippingSubdivisions(subdivisions);
     setShippingSubdivision(Object.keys(subdivisions)[0]);
   };
-  // fetches shipping opetens 
+
   const fetchShippingOptions = async (checkoutTokenId, country, stateProvince = null) => {
     const options = await commerce.checkout.getShippingOptions(checkoutTokenId, { country, region: stateProvince });
 
