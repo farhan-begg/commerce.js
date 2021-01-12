@@ -8,8 +8,6 @@ import { Link, useLocation } from 'react-router-dom'
 const Navbar = ({ totalItems }) => {
     const classes = useStyles();
     const location = useLocation();
-
-    
     return (
         <>
             <AppBar position="fixed" className={classes.appBar} color="inherit">
