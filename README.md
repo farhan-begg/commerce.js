@@ -1,3 +1,14 @@
+# Technology Used
+- Commerce.js
+- Stripe 
+- Material UI
+
+
+Responsive website that allows users to purchase items and allows business owners, to input data and manage their ecommerce website using commerce.js and Stripe
+Designed mobile friendly 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
