@@ -7,7 +7,7 @@ import {commerce } from '../../../lib/commerce';
 const steps = ['Shipping address', 'Payment details ']
 
 
-const Checkout = () => {
+const Checkout = ({cart }) => {
     const [activeStep, setActiveStep] = useState(0)
     const [checkoutToken, setCheckoutToken] = useState(null)
     const classes = useStyles();
@@ -25,7 +25,7 @@ const Checkout = () => {
 
         generateToken();
 
-    }, [])
+    }, [cart])
 
     const Confirmation = () => (
         <div>
@@ -36,7 +36,7 @@ const Checkout = () => {
    
     // if the form is on step 0 display address form if not payment form
     const Form = () => ( activeStep === 0
-        ? <AddressForm />
+        ? <AddressForm checkoutToken={checkoutToken}/>
         : <PaymentForm />
     )
     return (
@@ -53,7 +53,7 @@ const Checkout = () => {
                         ))}
                         </Stepper>
                 
-                        {activeStep === steps.length ? <Confirmation /> : <Form/>}
+                        {activeStep === steps.length ? <Confirmation /> : checkoutToken && <Form/>}
                 </Paper>
             </main>
         </>
