@@ -7,6 +7,9 @@
 Responsive website that allows users to purchase items and allows business owners, to input data and manage their ecommerce website using commerce.js and Stripe
 Designed mobile friendly 
 
+Live Link
+https://frosty-cori-376675.netlify.app/
+
 
 
 # Getting Started with Create React App
